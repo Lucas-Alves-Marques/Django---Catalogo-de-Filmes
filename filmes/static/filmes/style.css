@@ -1,0 +1,33 @@
+body{
+    background-color: black;
+    background-image: url('./img/Background.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+img{
+    width: 300px;
+    border-radius: 40px;
+}
+
+.lista-filmes{
+    display: flex;
+}
+
+.filme{
+    color: white;
+    border: 10px solid rgb(15, 195, 223);
+    text-align: center;
+    margin: 5px;
+    border-radius: 50px;
+    background-color: rgb(15, 195, 223, 0.5);
+    font-size: 20px;
+    font-weight: bold;
+}
