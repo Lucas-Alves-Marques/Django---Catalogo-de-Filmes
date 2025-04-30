@@ -1,33 +1,63 @@
-body{
+body {
     background-color: black;
     background-image: url('./img/Background.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    color: rgb(255, 255, 255);
-    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-top: 0;
+
 }
 
-img{
+header {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    flex: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(1vh);
+    width: 100%;
+    margin-bottom: 2vh;
+
+}
+
+img {
     width: 300px;
+    height: 400px;
     border-radius: 40px;
 }
 
-.lista-filmes{
+.lista-filmes {
     display: flex;
+    justify-content: space-around;
+    width: 200vh;
+    height: 80vh;
+    flex-wrap: wrap;
 }
 
-.filme{
+.filme {
     color: white;
-    border: 10px solid rgb(15, 195, 223);
+    border: 10px solid rgb(0, 0, 0);
     text-align: center;
     margin: 5px;
     border-radius: 50px;
-    background-color: rgb(15, 195, 223, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(1vh);
     font-size: 20px;
     font-weight: bold;
+    box-shadow: 1vh 1vh 2vh white;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: 85%;
+}
+
+.filme p {
+    flex: 1;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
