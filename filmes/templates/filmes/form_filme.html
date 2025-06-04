@@ -9,16 +9,16 @@
 </head>
 <body>
     
-    <h1>{{ form.instance.pk|yesno: "Editar Filme, Novo Filme"}}</h1>
+    <h1>{{ form.instance.pk|yesno:"Editar Filme, Novo Filme"}}</h1>
     <form method="post" enctype="multipart/form-data">
 
-        {% crsf_token %}
+        {% csrf_token %}
         {{form.as_p}}
         <button type="submit">Salvar</button>
 
     </form>
 
-    <a href="{% url 'lista_filme' %}">Voltar</a>
+    <a href="{% url 'lista_filmes' %}">Voltar</a>
 
 </body>
 

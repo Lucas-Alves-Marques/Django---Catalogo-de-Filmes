@@ -16,7 +16,7 @@
     <header>
 
         <h1>Filmes Cadastrados</h1>
-        <a href="{% url 'criar_filme' %}">Novo Filme</a>
+        <a class="buttonNavigate" href="{% url 'criar_filmes' %}">Novo Filme</a>
 
     </header>
 
@@ -28,8 +28,8 @@
 
             <img src={{filme.capa}}>
             <p>{{ filme.titulo }} ({{ filme.ano }})</p>
-            <a href="{% url 'atualizar_filme' filme.pk}">Editar</a>
-            <a href="{% url 'deletar_filme' filme.pk}">Exlcuir</a>
+            <a class="buttonNavigate" href="{% url 'atualizar_filmes' filme.pk %}">Editar</a>
+            <a class="buttonNavigate" href="{% url 'deletar_filmes' filme.pk %}">Exlcuir</a>
 
         </div>
 

@@ -61,3 +61,8 @@ img {
     align-items: center;
     justify-content: center;
 }
+
+.buttonNavigate{
+    text-decoration: none;
+    color: inherit;
+}
