@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -6,18 +7,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Confirmar Exclusão</title>
+    <link rel="stylesheet" href="{% static 'filmes/style.css' %}">
 
 </head>
+
 <body>
 
-    <h1>Tem certeza que deseja excluir "{{filme.titulo}}"</h1>
-    <form method="post">
+    <form class="forms" method="post">
 
+        <h1>Tem certeza que deseja excluir "{{filme.titulo}}"?</h1>
         {% csrf_token %}
-        <button type="submit">Confirmar</button>
-        <a href="{% url 'lista_filmes' %}">Cancelar</a>
+        <div class="acoes-form">
+
+            <button class="buttonSubmit" type="submit">Confirmar</button>
+            <a class="buttonBack" href="{% url 'lista_filmes' %}">Cancelar</a>
+        </div>
 
     </form>
-    
+
 </body>
+
 </html>

@@ -19,7 +19,6 @@
         <a class="buttonNavigate" href="{% url 'criar_filmes' %}">Novo Filme</a>
 
     </header>
-
     <div class="lista-filmes">
 
         {% for filme in filmes %}
@@ -28,8 +27,12 @@
 
             <img src={{filme.capa}}>
             <p>{{ filme.titulo }} ({{ filme.ano }})</p>
-            <a class="buttonNavigate" href="{% url 'atualizar_filmes' filme.pk %}">Editar</a>
-            <a class="buttonNavigate" href="{% url 'deletar_filmes' filme.pk %}">Exlcuir</a>
+            <div class="acoes">
+
+                <a class="buttonNavigate" href="{% url 'atualizar_filmes' filme.pk %}">Editar</a>
+                <a class="buttonNavigate" href="{% url 'deletar_filmes' filme.pk %}">Excluir</a>
+
+            </div>
 
         </div>
 
