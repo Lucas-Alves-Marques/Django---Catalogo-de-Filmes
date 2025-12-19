@@ -27,6 +27,11 @@
 
             <img src={{filme.capa}}>
             <p>{{ filme.titulo }} ({{ filme.ano }})</p>
+
+            <a class="buttonNavigate btnDetalhes" data-titulo="{{ filme.titulo }}" data-ano="{{ filme.ano }}"
+                data-genero="{{ filme.genero }}" data-descricao="{{ filme.descricao }}"
+                data-capa="{{ filme.capa }}">Detalhes</a>
+
             <div class="acoes">
 
                 <a class="buttonNavigate" href="{% url 'atualizar_filmes' filme.pk %}">Editar</a>
@@ -47,6 +52,66 @@
         {% endfor %}
 
     </div>
+
+    <!-- Estrutura do Modal -->
+    <div id="movieModal" class="modal">
+
+        <div class="modal-content">
+
+            <span class="close">&times;</span>
+            <div class="modal-body">
+
+                <img id="modalCapa" src="" alt="Capa do Filme">
+                <div class="modal-info">
+
+                    <h2 id="modalTitulo"></h2>
+                    <p><strong>Ano:</strong> <span id="modalAno"></span></p>
+                    <p><strong>Gênero:</strong> <span id="modalGenero"></span></p>
+                    <p><strong>Descrição:</strong></p>
+                    <p id="modalDescricao"></p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        const modal = document.getElementById("movieModal");
+        const span = document.getElementsByClassName("close")[0];
+        const detailButtons = document.querySelectorAll(".btnDetalhes");
+
+        detailButtons.forEach(button => {
+
+            button.onclick = function () {
+
+                document.getElementById("modalTitulo").innerText = this.getAttribute("data-titulo");
+                document.getElementById("modalAno").innerText = this.getAttribute("data-ano");
+                document.getElementById("modalGenero").innerText = this.getAttribute("data-genero");
+                document.getElementById("modalDescricao").innerText = this.getAttribute("data-descricao");
+                document.getElementById("modalCapa").src = this.getAttribute("data-capa");
+
+                modal.style.display = "flex";
+            }
+        });
+
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function (event) {
+
+            if (event.target == modal) {
+
+                modal.style.display = "none";
+
+            }
+
+        }
+        
+    </script>
 
 </body>
 

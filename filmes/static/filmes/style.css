@@ -24,11 +24,15 @@ header {
 
 }
 
+header h1{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
 .filme img {
     width: 100%;
-    height: 400px;
+    height: 350px;
     border-radius: 40px;
-    object-fit: cover;
 }
 
 .lista-filmes {
@@ -46,12 +50,13 @@ header {
     border: 10px solid rgb(0, 0, 0);
     margin: 20px;
     border-radius: 50px;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(20, 20, 20, 0.80);
     backdrop-filter: blur(1vh);
     font-size: 20px;
     font-weight: bold;
     display: flex;
     flex-direction: column;
+    align-items: center;
     width: 320px;
     height: 550px;
     overflow: hidden;
@@ -75,9 +80,10 @@ header {
     color: inherit;
     padding: 10px 20px;
     border-radius: 10px;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.8);
     display: inline-block;
     transition: background-color 0.3s;
+    cursor: pointer;
 
 }
 
@@ -86,11 +92,23 @@ header {
     background-color: rgba(255, 255, 255, 0.2);
 }
 
+.btnDetalhes {
+
+    width: 200px;
+    text-align: center;
+
+}
+
 .acoes {
     display: flex;
-    justify-content: space-around;
+    gap: 30px;
     align-items: center;
     margin: 20px 0;
+}
+
+.acoes a {
+    width: 70px;
+    text-align: center;
 }
 
 .forms {
@@ -210,4 +228,125 @@ header {
 .buttonBack:hover {
     background-color: rgba(255, 255, 255, 0.2);
     transform: translateY(-2px);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: rgba(20, 20, 20, 0.95);
+    color: white;
+    padding: 30px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 800px;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    animation: modalScale 0.3s ease-out;
+}
+
+@keyframes modalScale {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    color: #aaa;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close:hover {
+    color: white;
+}
+
+.modal-body {
+    display: flex;
+    gap: 30px;
+}
+
+#modalCapa {
+    width: 250px;
+    height: 375px;
+    border-radius: 15px;
+    object-fit: cover;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.modal-info {
+    flex: 1;
+    max-height: 400px;
+    padding-right: 15px;
+}
+
+.modal-info h2 {
+    margin-top: 0;
+    font-size: 2rem;
+    color: #fff;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.modal-info p {
+    margin: 10px 0;
+    line-height: 1.6;
+    color: #ccc;
+    overflow-y: auto;
+    max-height: 200px;
+    scrollbar-width: thin;
+    scrollbar-color: white transparent;
+}
+
+
+.modal-info strong {
+    color: #fff;
+}
+
+#modalDescricao {
+    font-style: italic;
+}
+
+/* Responsividade para o modal */
+@media (max-width: 600px) {
+    .modal-body {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #modalCapa {
+        width: 100%;
+        max-width: 200px;
+        height: auto;
+    }
+
+    .modal-content {
+        padding: 20px;
+        margin: 10px;
+    }
 }
