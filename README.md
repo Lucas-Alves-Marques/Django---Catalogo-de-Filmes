@@ -5,6 +5,7 @@ Um sistema de gerenciamento de catálogo de filmes moderno, desenvolvido com Pyt
 ## ✨ Funcionalidades
 
 -   **Listagem de Filmes**: Visualização de todos os filmes cadastrados em formato de cards.
+-   **Sinopse dos Filmes**: Visualização das sinopses dos filmes cadastrados ao clicar em detalhes.
 -   **Cadastro e Edição**: Formulário estilizado para adicionar novos filmes ou editar as informações de títulos existentes.
 -   **Exclusão Segura**: Página de confirmação antes de remover qualquer item do catálogo.
 -   **Validações Inteligentes**: Verificação de dados antes de salvar (ex: ano de lançamento válido, tamanho mínimo de título e descrição).
